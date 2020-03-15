@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//BLANCARTE CORDERO GUILLERMO   MATRICULA:1843282  GPO:016 HORARIO:LUNES 8PM-10PM  FECHA:2-MARZO-2020//
 int main(int argc, char *argv[]) {
 	int i=0,n=0,num=0,sum=0,prom=0;
 	printf("Ingrese un numero positivo o si desea terminar ingrese un numero negativo:");
