@@ -1,9 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
-
 int main(int argc, char *argv[]) {
-	printf("Hola mundo. 1843282\n");
+	int i=0,n=0,num=0,sum=0,prom=0;
+	printf("Ingrese un numero positivo o si desea terminar ingrese un numero negativo:");
+	scanf("%d",&num);
+	if(num<0){
+		printf("Error\n");
+	}
+	while(num>=0){
+		sum =sum+num;
+		i=i+1;
+		printf("Ingrese un numero positivo o si desea terminar ingrese un numero negativo:");
+		scanf("%d",&num);
+	}
+	prom=sum/i;
+	printf("\nEl promedio de los numeros ingresados es:%d",prom);
 	return 0;
 }
