@@ -5,8 +5,7 @@
 
 //Blancarte Cordero Guillermo Gpo:016  Matricula:1843282  Horario:Lunes 8pm-10pm //
 
-int main(int argc, char *argv[]) {
-	int i,j,num;
+struct registro{
 	char stuid[7]; //Matricula del estudiante//
 	char nombre[100]; //Nombre del alumno//
 	char apepa[100]; //Primer apellido//
@@ -16,60 +15,55 @@ int main(int argc, char *argv[]) {
 	char  Grado[30]; //Grado del alumno//
 	char carrera[30];//Carrera del alumno//
 	char Genero[30];//Genero del alumno//
+}alumnos[10];
+
+int main(){
 	
-	printf("Cuantos alumnos desea regitrar:");
+	int i,num;
+	printf("Cuantos alumnos desea registrar:");
 	scanf("%d",&num);
-	while(num>=10 || num<0){
-		printf("ERROR\ningrese otro numero:");
-		scanf("%d",&num);
+	
+	for(i=1;i<=num;i++){
+		printf("\nIngresa tu matricula:");
+		fflush(stdin);
+		gets(alumnos[i].stuid);
+		while(strcmp (alumnos [i-1].stuid, alumnos [i].stuid)== 1){
+				printf("\n\nERROR\nMatricula repetida");
+				printf("\n\nIngrese otra matricula:");
+				scanf(" %s",&alumnos[i].stuid);
+		}
+		fflush(stdin);
+		printf("Ingrese su primer nombre:");
+		gets(alumnos[i].nombre);
+		fflush(stdin);
+		printf("Ingrese su apellido paterno:");
+		gets(alumnos[i].apepa);
+		printf("Ingrese su apellido materno:");
+		gets(alumnos[i].apema);
+		printf("Ingrese su fecha de nacimiento:");
+		gets(alumnos[i].Fecha);
+		printf("Ingrese el nombre de la institucion:");
+		gets(alumnos[i].escue);
+		fflush(stdin);
+		printf("Ingrese su grado:");
+		gets(alumnos[i].Grado);
+		printf("Ingrese el nombre de su carrera:");
+		gets(alumnos[i].carrera);
+		printf("Ingrese su genero:");
+	    scanf("%[^\n]",&alumnos[i].Genero);
 	}
-	fflush(stdin);
-	for(i=1;i<num;i++){
-	printf("\nIngrese la matricula:");
-	scanf("%[^\n]",&stuid[i]);
-	fflush(stdin);
-	for(j=num;j>=1;j--){
-			printf("\n\nERROR\nMatricula repetida");
-			printf("\n\nIngrese otra matricula:");
-			scanf(" %s",&stuid[i]);}
-	fflush(stdin);
-	printf("Ingrese su nombre:");
-	scanf("%[^\n]",&stuid[i]);;
-	fflush(stdin);
-	printf("Ingrese su apellido paterno:");
-	scanf("%[^\n]",apepa);
-	fflush(stdin);
-	printf("Ingrese su apellido materno:");
-	scanf("%[^\n]",apema);
-	fflush(stdin);
-	printf("Ingrese su fecha de nacimiento:");
-	scanf("%[^\n]",Fecha);
-	fflush(stdin);
-	printf("Ingrese el nombre de su la institucion");
-	scanf("%[^\n]",escue);
-	fflush(stdin);
-	printf("Ingrese su grado:");
-	scanf("%[^\n]",Grado);
-	fflush(stdin);
-	printf("Ingrese su carrera:");
-	scanf("%[^\n]",carrera);
-	fflush(stdin);
-	printf("Ingrese su genero:");
-	scanf("%[^\n]",Genero);
-	fflush(stdin);
-}
+	
 	printf("\n\tRegistro");
 	for(i=1;i<=num;i++){
-		puts(stuid);
-		puts(nombre);
-		printf("Apellido paterno:%s\n",apepa);
-		printf("Apellido materno:%s\n",apema);
-		printf("Fecha de nacimiento:%s\n",Fecha);
-		printf("Nombre de la institucion:%s\n",escue);
-		printf("Grado:%s\n",Grado);
-		printf("Carrera:%s\n",carrera);
-		printf("Genero:%s\n",Genero);
+		printf("\nMatricula:%s\n",alumnos[i].stuid);
+		printf("Nombre:%s\n",alumnos[i].nombre);
+		printf("Apellido paterno:%s\n",alumnos[i].apepa);
+		printf("Apellido materno:%s\n",alumnos[i].apema);
+		printf("Fecha de nacimiento:%s\n",alumnos[i].Fecha);
+		printf("Nombre de la institucion:%s\n",alumnos[i].escue);
+		printf("Grado:%s\n",alumnos[i].Grado);
+		printf("Carrera:%s\n",alumnos[i].carrera);
+		printf("Genero:%s\n",alumnos[i].Genero);
 	}
-	
 	return 0;
 }
